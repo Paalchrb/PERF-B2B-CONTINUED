@@ -1,0 +1,4 @@
+{
+  "mongoURI": "mongodb+srv://db-user:db-123-user@b2b-portal-ceulj.mongodb.net/test?retryWrites=true&w=majority",
+  "jwtSecret": "secret"
+}
