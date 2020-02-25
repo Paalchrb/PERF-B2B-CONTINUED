@@ -123,14 +123,18 @@ router.get(
   auth,
   async (req, res) => {
     try {
-      const company = await Company.findById(req.user.companyId);
+  /*     const company = await Company.findById(req.user.companyId);
       const orderIds = company.recentOrders;
 
       const recentOrders = await Order.find( { '_id': { $in: orderIds } } );
+ */
+      const response = await Order.find({ $or: [ {'buyer.companyId': req.user.companyId}, {'seller.companyId': req.user.companyId} ] }).sort('-orderDate');
+
+      const recentOrders = response.slice(0, 6);
 
       return res
         .status(200)
-        .json(recentOrders);
+        .json(recentOrders); 
     } catch (error) {
       console.error(error.message);
       return res

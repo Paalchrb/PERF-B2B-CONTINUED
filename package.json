@@ -10,7 +10,7 @@
     "dev": "concurrently \"npm run server\" \"npm run client\"",
     "heroku-postbuild": "NPM_CONFIG_PRODUCTION=false npm install --prefix client && npm run build --prefix client"
   },
-  "author": "",
+  "author": "Pål-Christian By",
   "license": "MIT",
   "dependencies": {
     "bcryptjs": "^2.4.3",
@@ -21,7 +21,6 @@
     "express-validator": "^6.3.1",
     "jsonwebtoken": "^8.5.1",
     "mongoose": "^5.8.4",
-    "node-sass": "^4.13.0",
     "nodemon": "^2.0.2",
     "uuid": "^3.3.3"
   }
